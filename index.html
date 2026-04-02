@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GeographyQuest Kids — Your Child's Big World Adventure Starts Here!</title>
+<meta name="description" content="GeographyQuest Kids offers fun, exciting Geography lessons for kids ages 5–10 in the Greater Seattle Area. Learn about continents, cultures, mountains, roads and more with Ms. Ankita, Gold Medalist from Delhi University.">
+<meta name="keywords" content="geography lessons kids, geography tutor Seattle, kids geography classes, learn geography ages 5-10, GeographyQuest Kids">
+
+<!-- ===== GOOGLE ANALYTICS 4 — Replace G-XXXXXXXXXX with your real GA4 ID ===== -->
+<!-- Get your free GA4 ID at: https://analytics.google.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- ===== GOOGLE ADS — Replace ca-pub-XXXXXXXXXXXXXXXX with your Publisher ID ===== -->
+<!-- Get your free Publisher ID at: https://adsense.google.com -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   CSS VARIABLES — Easy to customise colours & fonts here!
+   ============================================================ */
+:root {
+  --sky:        #0ea5e9;
+  --sky-dark:   #0369a1;
+  --earth:      #16a34a;
+  --earth-dark: #14532d;
+  --sun:        #f59e0b;
+  --sun-bright: #fbbf24;
+  --coral:      #f97316;
+  --violet:     #7c3aed;
+  --pink:       #ec4899;
+  --teal:       #0d9488;
+  --cream:      #fefce8;
+  --white:      #ffffff;
+  --dark:       #1e293b;
+  --text:       #334155;
+  --muted:      #64748b;
+  --card-bg:    rgba(255,255,255,0.94);
+  --shadow:     0 8px 32px rgba(0,0,0,0.11);
+  --shadow-lg:  0 20px 60px rgba(0,0,0,0.15);
+  --radius:     22px;
+  --font-head:  'Fredoka One', cursive;
+  --font-body:  'Nunito', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--font-body); background:#f0f9ff; color:var(--text); overflow-x:hidden; }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:rgba(14,165,233,0.97); backdrop-filter:blur(14px);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 2rem; height:68px;
+  box-shadow:0 4px 24px rgba(0,0,0,0.18);
+}
+.nav-logo {
+  font-family:var(--font-head); font-size:1.6rem; color:white;
+  text-decoration:none; display:flex; align-items:center; gap:8px;
+  letter-spacing:0.5px;
+}
+.nav-logo span { font-size:1.9rem; }
+.nav-links { display:flex; gap:0.2rem; align-items:center; }
+.nav-links a {
+  color:white; text-decoration:none; font-weight:700; font-size:0.88rem;
+  padding:0.4rem 0.9rem; border-radius:30px; transition:background 0.2s;
+}
+.nav-links a:hover { background:rgba(255,255,255,0.2); }
+.nav-cta {
+  background:var(--sun) !important; color:var(--dark) !important;
+  font-weight:800 !important; margin-left:0.3rem;
+}
+.nav-cta:hover { background:var(--sun-bright) !important; transform:scale(1.04); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+#hero {
+  min-height:100vh;
+  background:linear-gradient(155deg, #0ea5e9 0%, #0c4a6e 45%, #14532d 100%);
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding:7rem 2rem 5rem;
+  position:relative; overflow:hidden;
+}
+.hero-bg-pattern {
+  position:absolute; inset:0; opacity:0.04;
+  background-image: radial-gradient(circle, white 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events:none;
+}
+.cloud {
+  position:absolute; background:white; border-radius:60px; opacity:0.1;
+  animation:drift linear infinite; pointer-events:none;
+}
+.cloud:nth-child(1){width:280px;height:65px;top:10%;left:-320px;animation-duration:30s;}
+.cloud:nth-child(2){width:190px;height:50px;top:30%;left:-240px;animation-duration:42s;animation-delay:-15s;}
+.cloud:nth-child(3){width:340px;height:75px;top:58%;left:-380px;animation-duration:25s;animation-delay:-8s;opacity:0.07;}
+@keyframes drift { to { transform:translateX(115vw); } }
+
+.globe-wrap { position:relative; display:inline-block; margin-bottom:1rem; }
+.globe-emoji { font-size:5.5rem; animation:floatSpin 18s linear infinite; display:inline-block; filter:drop-shadow(0 10px 30px rgba(0,0,0,0.4)); }
+@keyframes floatSpin {
+  0%   { transform:rotate(0deg) translateY(0px); }
+  50%  { transform:rotate(180deg) translateY(-12px); }
+  100% { transform:rotate(360deg) translateY(0px); }
+}
+.hero-sparkles { position:absolute; inset:-20px; pointer-events:none; }
+.sparkle {
+  position:absolute; width:8px; height:8px; border-radius:50%;
+  background:var(--sun-bright); animation:twinkle 2s ease-in-out infinite;
+}
+.sparkle:nth-child(1){top:10%;left:15%;animation-delay:0s;}
+.sparkle:nth-child(2){top:20%;right:10%;animation-delay:0.5s;background:#fff;}
+.sparkle:nth-child(3){bottom:15%;left:20%;animation-delay:1s;}
+.sparkle:nth-child(4){bottom:10%;right:15%;animation-delay:1.5s;background:#fff;}
+@keyframes twinkle { 0%,100%{opacity:0;transform:scale(0.5);} 50%{opacity:1;transform:scale(1.2);} }
+
+.hero h1 {
+  font-family:var(--font-head);
+  font-size:clamp(2.6rem,6.5vw,5.2rem);
+  color:#ffffff; line-height:1.1; margin:0.5rem 0;
+  text-shadow:0 2px 4px rgba(0,0,0,0.4), 0 8px 32px rgba(0,0,0,0.35);
+  letter-spacing:0.5px;
+}
+.hero h1 .accent { color:#fde68a; text-shadow:0 2px 4px rgba(0,0,0,0.3), 0 0 40px rgba(253,230,138,0.4); }
+.hero-sub {
+  font-size:clamp(1rem,2.2vw,1.35rem);
+  color:rgba(255,255,255,0.88); max-width:620px;
+  line-height:1.65; margin:0.5rem auto 2rem; font-weight:600;
+}
+.hero-badges {
+  display:flex; gap:0.8rem; flex-wrap:wrap;
+  justify-content:center; margin-bottom:2.5rem;
+}
+.badge {
+  background:rgba(255,255,255,0.16); border:2px solid rgba(255,255,255,0.28);
+  color:white; padding:0.45rem 1.2rem; border-radius:30px;
+  font-weight:800; font-size:0.88rem; backdrop-filter:blur(6px);
+  transition:background 0.2s;
+}
+.badge:hover { background:rgba(255,255,255,0.25); }
+.hero-btns { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; }
+.btn-primary {
+  background:var(--sun); color:var(--dark); border:none; cursor:pointer;
+  font-family:var(--font-body); font-weight:800; font-size:1.05rem;
+  padding:0.95rem 2.4rem; border-radius:50px;
+  box-shadow:0 8px 28px rgba(245,158,11,0.45);
+  transition:transform 0.2s, box-shadow 0.2s; text-decoration:none; display:inline-block;
+}
+.btn-primary:hover { transform:translateY(-3px); box-shadow:0 14px 36px rgba(245,158,11,0.55); }
+.btn-secondary {
+  background:transparent; color:white;
+  border:2.5px solid rgba(255,255,255,0.55); cursor:pointer;
+  font-family:var(--font-body); font-weight:800; font-size:1.05rem;
+  padding:0.95rem 2.4rem; border-radius:50px;
+  transition:background 0.2s, border-color 0.2s;
+  text-decoration:none; display:inline-block;
+}
+.btn-secondary:hover { background:rgba(255,255,255,0.15); border-color:white; }
+
+/* ============================================================
+   STATS BAR
+   ============================================================ */
+.stats-bar {
+  background:var(--sun); padding:1.4rem 2rem;
+  display:flex; align-items:center; justify-content:center;
+  gap:3rem; flex-wrap:wrap;
+}
+.stat { text-align:center; }
+.stat-num { font-family:var(--font-head); font-size:2.1rem; color:var(--dark); line-height:1; }
+.stat-label { font-size:0.8rem; font-weight:800; color:#78350f; text-transform:uppercase; letter-spacing:0.6px; margin-top:2px; }
+
+/* ============================================================
+   SHARED SECTION STYLES
+   ============================================================ */
+section { padding:5.5rem 2rem; }
+.section-title {
+  font-family:var(--font-head); font-size:clamp(1.9rem,4.5vw,2.9rem);
+  text-align:center; margin-bottom:0.5rem; color:var(--dark);
+}
+.section-sub {
+  text-align:center; color:var(--muted); font-size:1rem;
+  max-width:600px; margin:0 auto 3rem; line-height:1.7; font-weight:600;
+}
+
+/* ============================================================
+   WHY GEOGRAPHY
+   ============================================================ */
+#why { background:var(--cream); }
+.why-grid {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+  gap:1.5rem; max-width:1120px; margin:0 auto;
+}
+.why-card {
+  background:var(--card-bg); border-radius:var(--radius);
+  padding:2rem 1.8rem; box-shadow:var(--shadow);
+  border-top:6px solid var(--sky);
+  transition:transform 0.25s, box-shadow 0.25s;
+}
+.why-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+.why-card:nth-child(2){border-top-color:var(--earth);}
+.why-card:nth-child(3){border-top-color:var(--coral);}
+.why-card:nth-child(4){border-top-color:var(--violet);}
+.why-card:nth-child(5){border-top-color:var(--pink);}
+.why-card:nth-child(6){border-top-color:var(--teal);}
+.why-icon { font-size:2.8rem; margin-bottom:1rem; display:block; }
+.why-card h3 { font-family:var(--font-head); font-size:1.25rem; color:var(--dark); margin-bottom:0.5rem; }
+.why-card p { font-size:0.93rem; color:var(--muted); line-height:1.65; font-weight:600; }
+
+/* ============================================================
+   PROGRAMS
+   ============================================================ */
+#programs { background:linear-gradient(180deg,#f0f9ff 0%,#e0f2fe 100%); }
+.programs-header {
+  display:flex; align-items:flex-start; justify-content:space-between;
+  max-width:1120px; margin:0 auto 2.5rem; flex-wrap:wrap; gap:1rem;
+}
+.programs-header-left .section-title { text-align:left; margin-bottom:0.2rem; }
+.programs-header-left p { color:var(--muted); font-weight:600; font-size:0.9rem; }
+.btn-add {
+  background:var(--earth); color:white; border:none; cursor:pointer;
+  font-family:var(--font-body); font-weight:800; font-size:0.95rem;
+  padding:0.75rem 1.8rem; border-radius:50px;
+  display:flex; align-items:center; gap:8px; white-space:nowrap;
+  transition:background 0.2s, transform 0.2s; box-shadow:0 4px 16px rgba(22,163,74,0.3);
+}
+.btn-add:hover { background:var(--earth-dark); transform:scale(1.04); }
+
+.programs-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr));
+  gap:2rem; max-width:1120px; margin:0 auto;
+}
+.program-card {
+  background:var(--card-bg); border-radius:var(--radius);
+  box-shadow:var(--shadow); overflow:hidden;
+  transition:transform 0.25s, box-shadow 0.25s;
+}
+.program-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+.program-header {
+  padding:1.6rem 1.8rem 1.2rem;
+  display:flex; align-items:flex-start; gap:1rem;
+  border-bottom:4px solid var(--sky);
+}
+.program-emoji { font-size:2.6rem; flex-shrink:0; }
+.program-meta { flex:1; }
+.program-tag {
+  display:inline-block; font-size:0.7rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:0.8px;
+  padding:0.2rem 0.8rem; border-radius:20px; margin-bottom:0.4rem;
+}
+.program-card h3 {
+  font-family:var(--font-head); font-size:1.2rem;
+  color:var(--dark); line-height:1.25; margin-bottom:0.3rem;
+}
+.program-desc { font-size:0.85rem; color:var(--muted); font-weight:600; line-height:1.5; }
+.program-lessons { padding:0.5rem 1.8rem 0.5rem; }
+.lesson-item {
+  padding:0.7rem 0; border-bottom:1px dashed #e2e8f0;
+  cursor:pointer;
+}
+.lesson-item:last-child { border-bottom:none; }
+.lesson-title-row {
+  display:flex; align-items:center; gap:0.7rem; font-size:0.88rem; font-weight:700;
+}
+.lesson-num {
+  width:26px; height:26px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:0.72rem; font-weight:800; flex-shrink:0; color:white;
+}
+.lesson-desc {
+  display:none; font-size:0.82rem; color:var(--muted);
+  line-height:1.55; font-weight:600; padding:0.5rem 0 0.2rem 2.2rem;
+}
+.lesson-desc.open { display:block; }
+.lesson-arrow { margin-left:auto; font-size:0.7rem; color:var(--muted); transition:transform 0.2s; }
+.lesson-arrow.open { transform:rotate(180deg); }
+
+.program-footer {
+  padding:1rem 1.8rem; background:#f8fafc;
+  display:flex; align-items:center; justify-content:space-between;
+  border-top:1px solid #e2e8f0;
+}
+.age-badge { font-size:0.78rem; font-weight:800; color:var(--muted); display:flex; align-items:center; gap:5px; }
+.btn-expand {
+  font-size:0.8rem; font-weight:800; color:var(--sky-dark);
+  background:none; border:none; cursor:pointer;
+  display:flex; align-items:center; gap:4px; transition:color 0.2s;
+}
+.btn-expand:hover { color:var(--sky); }
+.program-actions { display:flex; gap:0.5rem; padding:0 1.8rem 1.3rem; }
+.btn-edit-prog, .btn-del-prog {
+  font-size:0.78rem; font-weight:800; padding:0.32rem 0.9rem;
+  border-radius:20px; border:2px solid; cursor:pointer;
+  font-family:var(--font-body); transition:all 0.2s;
+}
+.btn-edit-prog { color:var(--sky-dark); border-color:var(--sky); background:transparent; }
+.btn-edit-prog:hover { background:var(--sky); color:white; }
+.btn-del-prog { color:#dc2626; border-color:#dc2626; background:transparent; }
+.btn-del-prog:hover { background:#dc2626; color:white; }
+
+/* ============================================================
+   TEACHER
+   ============================================================ */
+#teacher {
+  background:linear-gradient(140deg,#1e293b 0%,#0c4a6e 60%,#14532d 100%);
+  color:white; position:relative; overflow:hidden;
+}
+#teacher::before {
+  content:''; position:absolute; inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,0.03) 1px,transparent 1px);
+  background-size:35px 35px;
+}
+.teacher-inner {
+  max-width:920px; margin:0 auto; position:relative;
+  display:grid; grid-template-columns:220px 1fr; gap:3.5rem; align-items:center;
+}
+.teacher-avatar-wrap { display:flex; flex-direction:column; align-items:center; gap:1rem; }
+.teacher-avatar {
+  width:190px; height:190px; border-radius:50%;
+  background:linear-gradient(135deg,var(--sun),var(--coral));
+  display:flex; align-items:center; justify-content:center;
+  font-size:6rem; box-shadow:0 16px 50px rgba(0,0,0,0.45);
+  border:4px solid rgba(255,255,255,0.15);
+}
+.teacher-name-tag {
+  background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2);
+  border-radius:30px; padding:0.4rem 1rem; text-align:center;
+  font-weight:800; font-size:0.85rem; color:white; backdrop-filter:blur(6px);
+}
+.teacher-sub-tag { font-size:0.72rem; color:rgba(255,255,255,0.65); font-weight:600; }
+#teacher .section-title { text-align:left; color:white; margin-bottom:0.3rem; }
+.teacher-bio { color:rgba(255,255,255,0.82); font-size:0.96rem; line-height:1.75; font-weight:600; margin-bottom:1.8rem; }
+.teacher-points { display:flex; flex-direction:column; gap:0.75rem; }
+.teacher-point {
+  display:flex; align-items:center; gap:0.9rem;
+  font-size:0.92rem; font-weight:700; color:rgba(255,255,255,0.9);
+}
+.teacher-point-icon {
+  width:34px; height:34px; border-radius:50%;
+  background:rgba(255,255,255,0.1); display:flex; align-items:center;
+  justify-content:center; font-size:1.1rem; flex-shrink:0;
+}
+
+/* ============================================================
+   REGISTRATION FORM
+   ============================================================ */
+#register { background:var(--cream); }
+.form-wrap {
+  max-width:700px; margin:0 auto;
+  background:white; border-radius:28px;
+  padding:2.8rem; box-shadow:var(--shadow-lg);
+}
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+.form-full { grid-column:1/-1; }
+.form-group { display:flex; flex-direction:column; gap:0.45rem; }
+.form-group label {
+  font-size:0.8rem; font-weight:800; color:var(--dark);
+  text-transform:uppercase; letter-spacing:0.5px;
+}
+.form-group input, .form-group select, .form-group textarea {
+  font-family:var(--font-body); font-size:0.93rem; font-weight:600;
+  padding:0.78rem 1rem; border:2.5px solid #e2e8f0; border-radius:12px;
+  color:var(--dark); transition:border-color 0.2s, box-shadow 0.2s; background:#f8fafc;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline:none; border-color:var(--sky); box-shadow:0 0 0 4px rgba(14,165,233,0.1); background:white;
+}
+.form-group textarea { resize:vertical; min-height:90px; }
+.time-slots { display:grid; grid-template-columns:repeat(auto-fill,minmax(105px,1fr)); gap:0.5rem; }
+.time-slot {
+  padding:0.55rem 0.3rem; border:2.5px solid #e2e8f0; border-radius:10px;
+  text-align:center; font-size:0.82rem; font-weight:800; cursor:pointer;
+  transition:all 0.2s; color:var(--muted); background:#f8fafc;
+}
+.time-slot:hover { border-color:var(--sky); color:var(--sky-dark); background:#e0f2fe; }
+.time-slot.selected { border-color:var(--sky); background:var(--sky); color:white; }
+.checkbox-group { display:flex; flex-wrap:wrap; gap:0.5rem; }
+.checkbox-item {
+  display:flex; align-items:center; gap:0.4rem;
+  padding:0.4rem 0.9rem; border:2px solid #e2e8f0; border-radius:30px;
+  cursor:pointer; font-size:0.83rem; font-weight:700; transition:all 0.2s; background:#f8fafc;
+}
+.checkbox-item.checked { border-color:var(--earth); background:#dcfce7; color:var(--earth-dark); }
+.lang-badge {
+  display:flex; align-items:center; gap:0.6rem;
+  background:#eff6ff; border:2px solid #bfdbfe; border-radius:12px;
+  padding:0.75rem 1rem; font-size:0.88rem; font-weight:700; color:#1d4ed8;
+}
+.btn-submit {
+  width:100%;
+  background:linear-gradient(135deg,var(--sky),var(--sky-dark));
+  color:white; border:none; cursor:pointer;
+  font-family:var(--font-body); font-weight:800; font-size:1.05rem;
+  padding:1.05rem; border-radius:14px; margin-top:1.5rem;
+  transition:transform 0.2s, box-shadow 0.2s;
+  box-shadow:0 6px 24px rgba(14,165,233,0.35);
+}
+.btn-submit:hover { transform:translateY(-2px); box-shadow:0 12px 36px rgba(14,165,233,0.45); }
+.success-msg { display:none; text-align:center; padding:2.5rem 1rem; }
+.success-msg .big { font-size:3.5rem; margin-bottom:0.5rem; }
+.success-msg h3 { font-family:var(--font-head); font-size:1.8rem; color:var(--earth-dark); margin-bottom:0.5rem; }
+.success-msg p { color:var(--muted); font-weight:600; font-size:1rem; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background:var(--dark); color:rgba(255,255,255,0.65);
+  text-align:center; padding:2.8rem 1rem;
+  font-size:0.88rem; font-weight:600;
+}
+.footer-logo { font-family:var(--font-head); font-size:1.9rem; color:white; margin-bottom:0.5rem; }
+footer p { line-height:1.8; }
+footer .footer-copy { margin-top:0.5rem; color:rgba(255,255,255,0.35); font-size:0.78rem; }
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+.modal-overlay {
+  display:none; position:fixed; inset:0; z-index:2000;
+  background:rgba(0,0,0,0.6); backdrop-filter:blur(5px);
+  align-items:center; justify-content:center; padding:1rem;
+}
+.modal-overlay.open { display:flex; }
+.modal {
+  background:white; border-radius:24px; width:100%; max-width:600px;
+  max-height:90vh; overflow-y:auto; padding:2.2rem;
+  box-shadow:0 40px 100px rgba(0,0,0,0.35); animation:popIn 0.25s ease;
+}
+@keyframes popIn { from{transform:scale(0.88);opacity:0;} to{transform:scale(1);opacity:1;} }
+.modal-head { display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; }
+.modal-head h2 { font-family:var(--font-head); font-size:1.55rem; color:var(--dark); }
+.btn-close {
+  background:#f1f5f9; border:none; cursor:pointer; width:36px; height:36px;
+  border-radius:50%; font-size:1rem; display:flex; align-items:center; justify-content:center;
+  transition:background 0.2s;
+}
+.btn-close:hover { background:#e2e8f0; }
+.modal-form { display:flex; flex-direction:column; gap:1rem; }
+.modal-form .form-group { display:flex; flex-direction:column; gap:0.4rem; }
+.modal-form label { font-size:0.8rem; font-weight:800; color:var(--dark); text-transform:uppercase; letter-spacing:0.4px; }
+.modal-form input, .modal-form select, .modal-form textarea {
+  font-family:var(--font-body); font-size:0.91rem; font-weight:600;
+  padding:0.65rem 1rem; border:2.5px solid #e2e8f0; border-radius:12px;
+  color:var(--dark); transition:border-color 0.2s; background:#f8fafc;
+}
+.modal-form input:focus, .modal-form select:focus, .modal-form textarea:focus {
+  outline:none; border-color:var(--sky); background:white;
+}
+.lessons-builder { display:flex; flex-direction:column; gap:0.5rem; }
+.lesson-input-row { display:flex; align-items:flex-start; gap:0.5rem; }
+.lesson-input-row input { flex:1; }
+.lesson-desc-input { flex:1; font-size:0.82rem !important; }
+.lesson-input-group { flex:1; display:flex; flex-direction:column; gap:0.3rem; }
+.btn-rm-lesson {
+  background:none; border:none; cursor:pointer; font-size:1.1rem;
+  color:#dc2626; padding:0.5rem 4px; border-radius:6px; transition:background 0.2s; flex-shrink:0;
+}
+.btn-rm-lesson:hover { background:#fee2e2; }
+.btn-add-lesson {
+  background:none; border:2px dashed #cbd5e1; border-radius:10px;
+  color:var(--muted); font-family:var(--font-body); font-weight:700; font-size:0.85rem;
+  padding:0.5rem; cursor:pointer; transition:border-color 0.2s, color 0.2s;
+}
+.btn-add-lesson:hover { border-color:var(--sky); color:var(--sky-dark); }
+.btn-save {
+  background:var(--earth); color:white; border:none; cursor:pointer;
+  font-family:var(--font-body); font-weight:800; font-size:1rem;
+  padding:0.85rem; border-radius:12px; transition:background 0.2s; margin-top:0.5rem;
+}
+.btn-save:hover { background:var(--earth-dark); }
+
+/* ============================================================
+   SCROLL ANIMATIONS
+   ============================================================ */
+.fade-up { opacity:0; transform:translateY(28px); transition:opacity 0.65s ease, transform 0.65s ease; }
+.fade-up.visible { opacity:1; transform:translateY(0); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:760px){
+  .teacher-inner { grid-template-columns:1fr; text-align:center; }
+  #teacher .section-title { text-align:center; }
+  .teacher-points { align-items:center; }
+  .teacher-avatar-wrap { margin:0 auto; }
+  .form-grid { grid-template-columns:1fr; }
+  .nav-links a:not(.nav-cta) { display:none; }
+  .programs-header { flex-direction:column; }
+  .programs-header-left .section-title { text-align:center; }
+  .programs-header-left p { text-align:center; }
+}
+@media(max-width:480px){
+  .stats-bar { gap:1.5rem; }
+  .form-wrap { padding:1.6rem; }
+  .hero-badges { gap:0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav>
+  <a class="nav-logo" href="#hero"><span>🌍</span> GeographyQuest Kids</a>
+  <div class="nav-links">
+    <a href="#why">Why Geography</a>
+    <a href="#programs">Programs</a>
+    <a href="#teacher">Ms. Ankita</a>
+    <a href="#register" class="nav-cta">Book Free Trial 🚀</a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="cloud"></div><div class="cloud"></div><div class="cloud"></div>
+  <div class="globe-wrap">
+    <div class="hero-sparkles">
+      <div class="sparkle"></div><div class="sparkle"></div>
+      <div class="sparkle"></div><div class="sparkle"></div>
+    </div>
+    <div class="globe-emoji">🌏</div>
+  </div>
+  <h1>Your Child's <span class="accent">Big World</span><br>Adventure Starts Here!</h1>
+  <p class="hero-sub">Fun, exciting Geography lessons for kids ages 5–10. Discover continents, cultures, mountains, roads and so much more — with an expert teacher who makes every lesson an unforgettable adventure!</p>
+  <div class="hero-badges">
+    <span class="badge">🎒 Ages 5–10 Years</span>
+    <span class="badge">🕔 Flexible Evening Slots</span>
+    <span class="badge">🗺️ Multiple Exciting Programs</span>
+    <span class="badge">⭐ Expert Teacher</span>
+  </div>
+  <div class="hero-btns">
+    <a href="#programs" class="btn-primary">🗺️ Explore Programs</a>
+    <a href="#register" class="btn-secondary">Book a Free Trial</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS BAR
+     ============================================================ -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num" id="stat-programs">6+</div><div class="stat-label">Programs</div></div>
+  <div class="stat"><div class="stat-num" id="stat-lessons">40+</div><div class="stat-label">Lessons</div></div>
+  <div class="stat"><div class="stat-num">5–10</div><div class="stat-label">Years</div></div>
+  <div class="stat"><div class="stat-num">30–60 Min</div><div class="stat-label">Sessions</div></div>
+</div>
+
+<!-- ============================================================
+     WHY GEOGRAPHY
+     ============================================================ -->
+<section id="why">
+  <h2 class="section-title fade-up">🌟 Why Geography Matters</h2>
+  <p class="section-sub fade-up">Geography isn't just maps — it's understanding our whole world and raising smarter, kinder, and more curious humans who are ready for anything!</p>
+  <div class="why-grid">
+    <div class="why-card fade-up">
+      <span class="why-icon">🧠</span>
+      <h3>Boosts Critical Thinking</h3>
+      <p>Kids learn to connect the dots between places, people, and events — understanding <em>why</em> the world works the way it does, not just <em>where</em> things are! Every lesson sharpens young minds in ways that benefit every other subject too.</p>
+    </div>
+    <div class="why-card fade-up">
+      <span class="why-icon">🤝</span>
+      <h3>Builds Cultural Empathy</h3>
+      <p>From the streets of Tokyo to the villages of Africa, geography opens young hearts to different ways of life — raising kinder, more compassionate humans who celebrate our differences and feel at home anywhere in the world.</p>
+    </div>
+    <div class="why-card fade-up">
+      <span class="why-icon">🌲</span>
+      <h3>Nature, Parks & Our Planet</h3>
+      <p>From Yellowstone to the Amazon, geography brings nature to life! Kids who understand our planet's ecosystems — its national parks, rainforests, and oceans — develop a lifelong love of the outdoors and a genuine commitment to sustainable living.</p>
+    </div>
+    <div class="why-card fade-up">
+      <span class="why-icon">🏆</span>
+      <h3>Academic Superpower</h3>
+      <p>Geography turbocharges every subject — history, science, economics, even math! Early exposure to the world at ages 5–10 builds sharper minds, bigger imaginations, and a natural curiosity that carries kids further in school and life.</p>
+    </div>
+    <div class="why-card fade-up">
+      <span class="why-icon">✈️</span>
+      <h3>Future-Ready World Citizens</h3>
+      <p>Tomorrow's leaders, innovators, and changemakers will be those who truly understand our world. Geography at a young age plants the seeds of global awareness, responsibility, and the confidence to make a real difference.</p>
+    </div>
+    <div class="why-card fade-up">
+      <span class="why-icon">😊</span>
+      <h3>Happier, Healthier Kids</h3>
+      <p>Connecting with the world — its landscapes, cultures, and wonders — boosts curiosity, reduces anxiety, and gives kids a beautiful sense of belonging in something much bigger than themselves. Geography isn't just smart. It's good for the soul!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROGRAMS
+     ============================================================ -->
+<section id="programs">
+  <div class="programs-header">
+    <div class="programs-header-left">
+      <h2 class="section-title">📚 Our Programs</h2>
+      <p>Click any lesson to read more • Add your own programs below</p>
+    </div>
+    <button class="btn-add" onclick="openAddModal()">➕ Add New Program</button>
+  </div>
+  <div class="programs-grid" id="programsGrid"></div>
+</section>
+
+<!-- ============================================================
+     TEACHER
+     ============================================================ -->
+<section id="teacher">
+  <div class="teacher-inner">
+    <div class="teacher-avatar-wrap fade-up">
+      <div class="teacher-avatar">👩‍🏫</div>
+      <div class="teacher-name-tag">
+        Ms. Ankita Choudhary<br>
+        <span class="teacher-sub-tag">Your Geography Guide</span>
+      </div>
+    </div>
+    <div>
+      <h2 class="section-title fade-up">Meet Ms. Ankita</h2>
+      <p class="teacher-bio fade-up">Meet Ms. Ankita — a Gold Medalist in Geography from the prestigious Delhi University, India, and a former Assistant Professor who taught Geography at university level to both Bachelor's and Master's students. Shaped by growing up in one of the world's most geographically diverse countries, she brings a rare global perspective to every lesson. Now based in the Greater Seattle Area, Washington State, Ms. Ankita has spent time exploring the stunning Pacific Northwest and deepening her understanding of American geography — from the Cascades to the coastlines. She blends her rich Indian academic expertise with her firsthand American experience to make geography truly come alive for young explorers ages 5–10!</p>
+      <div class="teacher-points">
+        <div class="teacher-point fade-up">
+          <div class="teacher-point-icon">🥇</div>
+          <span>Gold Medalist — Geography, Delhi University, India</span>
+        </div>
+        <div class="teacher-point fade-up">
+          <div class="teacher-point-icon">🎓</div>
+          <span>Former University Professor, BA & MA Geography</span>
+        </div>
+        <div class="teacher-point fade-up">
+          <div class="teacher-point-icon">🌏</div>
+          <span>Roots in India — one of the world's most geographically rich nations</span>
+        </div>
+        <div class="teacher-point fade-up">
+          <div class="teacher-point-icon">🏔️</div>
+          <span>Now exploring the Pacific Northwest, Greater Seattle Area</span>
+        </div>
+        <div class="teacher-point fade-up">
+          <div class="teacher-point-icon">👧</div>
+          <span>Passionate about teaching kids ages 5–10</span>
+        </div>
+        <div class="teacher-point fade-up">
+          <div class="teacher-point-icon">🕔</div>
+          <span>Available Mon–Fri, 5PM–8PM PT</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     REGISTRATION FORM
+     ============================================================ -->
+<section id="register">
+  <h2 class="section-title fade-up">🚀 Register & Book Your Slot</h2>
+  <p class="section-sub fade-up">Fill in the form below and Ms. Ankita will get back to you within 1–2 business days to confirm your session!</p>
+  <div class="form-wrap fade-up">
+    <div id="formContent">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>Parent / Guardian Name *</label>
+          <input type="text" id="parentName" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label>Child's Name *</label>
+          <input type="text" id="childName" placeholder="Child's first name">
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="email" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="phone" placeholder="+1 (555) 000-0000">
+        </div>
+        <div class="form-group">
+          <label>Child's Age *</label>
+          <select id="childAge">
+            <option value="">Select age…</option>
+            <option>5</option><option>6</option><option>7</option>
+            <option>8</option><option>9</option><option>10</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Day Preference</label>
+          <select id="dayPref">
+            <option value="">Any weekday…</option>
+            <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+            <option>Thursday</option><option>Friday</option>
+          </select>
+        </div>
+        <div class="form-group form-full">
+          <label>Preferred Session Slot (5PM – 8PM PT) *</label>
+          <p style="font-size:0.8rem;color:var(--muted);font-weight:600;margin-bottom:0.5rem;">Sessions are 30–60 minutes depending on topic. Select your preferred start time:</p>
+          <div class="time-slots" id="timeSlots"></div>
+        </div>
+        <div class="form-group form-full">
+          <label>Programs Interested In</label>
+          <div class="checkbox-group" id="programCheckboxes"></div>
+        </div>
+        <div class="form-group form-full">
+          <label>Message / Questions</label>
+          <textarea id="message" placeholder="Tell Ms. Ankita a bit about your child's interests or any questions you have…"></textarea>
+        </div>
+        <div class="form-full">
+          <div class="lang-badge">
+            💬 <span>All classes are conducted in <strong>English language</strong></span>
+          </div>
+        </div>
+      </div>
+      <button class="btn-submit" onclick="submitForm()">🌍 Send My Registration!</button>
+    </div>
+    <div class="success-msg" id="successMsg">
+      <div class="big">🎉</div>
+      <h3>You're on the map!</h3>
+      <p>Thank you! Your registration has been received.</p>
+      <p style="margin-top:0.5rem;">Ms. Ankita will reach out within <strong>1–2 business days</strong> to confirm your slot!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="footer-logo">🌍 GeographyQuest Kids</div>
+  <p>Helping kids ages 5–10 discover their amazing planet • Mon–Fri 5PM–8PM PT</p>
+  <p class="footer-copy">© 2026 GeographyQuest Kids. All rights reserved.</p>
+</footer>
+
+<!-- ============================================================
+     ADD / EDIT PROGRAM MODAL
+     ============================================================ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="modalTitle">➕ Add New Program</h2>
+      <button class="btn-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-form">
+      <div class="form-group">
+        <label>Program Title *</label>
+        <input type="text" id="progTitle" placeholder="e.g. Oceans of the World">
+      </div>
+      <div class="form-group">
+        <label>Short Description</label>
+        <textarea id="progDesc" rows="2" placeholder="What will kids discover in this program?"></textarea>
+      </div>
+      <div class="form-grid" style="gap:0.8rem;">
+        <div class="form-group">
+          <label>Emoji Icon</label>
+          <input type="text" id="progEmoji" placeholder="🌊" maxlength="4">
+        </div>
+        <div class="form-group">
+          <label>Theme Color</label>
+          <select id="progColor">
+            <option value="#0ea5e9">Sky Blue</option>
+            <option value="#16a34a">Earth Green</option>
+            <option value="#f97316">Sunset Orange</option>
+            <option value="#7c3aed">Violet</option>
+            <option value="#ec4899">Pink</option>
+            <option value="#f59e0b">Golden Yellow</option>
+            <option value="#0d9488">Teal</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Age Group</label>
+        <select id="progAge">
+          <option>Ages 5–7</option>
+          <option>Ages 6–8</option>
+          <option selected>Ages 5–10</option>
+          <option>Ages 8–10</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Lessons (5–8 recommended) — Title & short description for each</label>
+        <div class="lessons-builder" id="lessonsBuilder"></div>
+        <button type="button" class="btn-add-lesson" onclick="addLessonInput()">+ Add Lesson</button>
+      </div>
+      <button type="button" class="btn-save" onclick="saveProgram()">💾 Save Program</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+/* ================================================================
+   PROGRAM DATA
+   To add/edit programs use the "+ Add New Program" button on the site.
+   ================================================================ */
+let programs = [
+  {
+    id:1, emoji:"🌍", color:"#0ea5e9", age:"Ages 5–10",
+    title:"Our Planet Earth — The Foundation",
+    desc:"Before we explore the world, let's understand the incredible planet we call home — its shape, its lines, its rhythms, and its wonders!",
+    lessons:[
+      {title:"What is Planet Earth? Shape, Size & Structure", desc:"Our home is a magnificent spinning ball of rock, water, and air hurtling through space! Kids discover the basic structure of Earth — its layers, its size, and what makes it the only known planet capable of supporting life. A jaw-dropping introduction that instantly connects young learners to the extraordinary world beneath their feet and above their heads."},
+      {title:"The Globe & How Maps Work", desc:"How do we fit the entire round Earth onto a flat piece of paper? Kids explore the fascinating science of maps and globes — discovering how cartographers represent our three-dimensional world in two dimensions. A hands-on, mind-expanding lesson that builds the foundational map-reading skills every young geographer needs!"},
+      {title:"Major Imaginary Lines — Equator, Tropics & Poles", desc:"The Equator, the Tropics of Cancer and Capricorn, the Arctic and Antarctic Circles — these invisible lines divide our planet into climate zones and shape life as we know it! Kids discover why these imaginary lines are so powerfully real in their effects — from the blazing heat of the tropics to the frozen silence of the poles."},
+      {title:"Latitude, Longitude & How We Find Places", desc:"Every single spot on Earth has its own unique address — a combination of latitude and longitude! Kids learn how this invisible grid system works, discovering how explorers, sailors, and today's GPS all rely on the same brilliant geographic framework to navigate our magnificent planet with pinpoint precision."},
+      {title:"Time Zones & the International Date Line", desc:"Why is it breakfast time in Seattle while families in India are having dinner — and people in Australia are already asleep? Kids explore the fascinating world of time zones and the International Date Line, discovering how Earth's rotation creates one of geography's most mind-bending and exciting concepts!"},
+      {title:"Oceans, Continents & Major Landforms", desc:"Seventy-one percent of our planet is covered in water — and the rest is an incredible variety of mountains, plains, deserts, and forests! Kids get a sweeping overview of Earth's major oceans, continents, and landforms, building the geographic vocabulary and big-picture awareness that underpins every other program in this series."},
+      {title:"Earth's Seasons, Climate Zones & Weather", desc:"Why do some places get snow while others bask in sunshine all year round? Kids explore how Earth's tilt, orbit, and geography combine to create seasons, climate zones, and weather patterns across our planet — a beautiful lesson connecting natural science with geography."}
+    ]
+  },
+  {
+    id:2, emoji:"🗺️", color:"#16a34a", age:"Ages 5–10",
+    title:"Countries & Continents Explored",
+    desc:"Master all 7 continents, 195 countries, and the wild facts that make each place totally unique!",
+    lessons:[
+      {title:"The 7 Continents — Tour the Globe!", desc:"Every great adventure starts with the big picture — and our planet has seven magnificent continents each with their own incredible story! Kids embark on an exciting tour of the entire globe, discovering the unique landscapes, climates, and cultures that make each continent extraordinary. The perfect launchpad for a lifetime of geographic curiosity and wonder!"},
+      {title:"Countries of Asia — Giants & Hidden Gems", desc:"Asia is home to over 4.7 billion people, the world's highest mountains, the longest rivers, and some of the most ancient civilizations on Earth! Kids explore the continent's breathtaking diversity — from the bustling megacities of China and India to the tiny hidden kingdoms nestled in the Himalayas — building global awareness and a deep appreciation for Asia's extraordinary geographic richness."},
+      {title:"Europe — A Tapestry of Nations", desc:"Packed into a relatively small space, Europe holds 44 countries, dozens of languages, and thousands of years of fascinating history! Kids discover how geography shaped Europe's incredible diversity — from the sun-drenched Mediterranean coastlines to the icy fjords of Scandinavia — exploring how neighbouring nations can be so wonderfully different yet deeply interconnected."},
+      {title:"Africa — The Continent of 54 Countries", desc:"Africa is the world's second largest continent and home to 54 unique countries, over 2,000 languages, and the most diverse wildlife on the planet! Kids explore Africa's stunning geographic variety — from the vast Sahara Desert to the lush Congo rainforest and the iconic Serengeti — discovering why protecting Africa's extraordinary natural ecosystems matters for our entire planet."},
+      {title:"The Americas — North, Central & South", desc:"Three regions, dozens of countries, and some of the world's most dramatic geography — the Americas have it all! Kids journey from the Arctic tundra of Canada to the tropical Amazon rainforest of Brazil, exploring how the natural landscapes of North, Central, and South America have shaped the cultures, economies, and communities that call this vast region home."},
+      {title:"Oceania, Antarctica & Island Nations", desc:"From the ancient landscapes of Australia to the remote coral islands of the Pacific and the frozen wilderness of Antarctica, this lesson takes kids to Earth's most extraordinary and far-flung places! Kids discover how island geography creates unique ecosystems and cultures, and why protecting these fragile, beautiful environments is one of the greatest sustainability challenges of our time."},
+      {title:"Flags, Capitals & Cool Country Facts", desc:"Every flag tells a story, every capital has a personality, and every country holds a surprise! Kids dive into the world's most fascinating country facts — discovering hidden geographic gems, record-breaking places, and the colourful symbols that make every nation unique. A joyful, fact-packed celebration of just how amazing our world truly is!"}
+    ]
+  },
+  {
+    id:3, emoji:"🎭", color:"#ec4899", age:"Ages 5–10",
+    title:"Cultures of the World",
+    desc:"Celebrate the incredible diversity of human traditions, food, art, music, and languages across the globe!",
+    lessons:[
+      {title:"What is Culture? Traditions & Celebrations", desc:"Culture is the invisible thread that connects every person to their place on the map! Kids discover what culture really means — from family traditions and celebrations to the unique customs that make every community special. This warm, welcoming introduction builds cultural empathy and a genuine excitement for the wonderful diversity of our human family."},
+      {title:"Food Around the World — A Delicious Geography", desc:"Did you know that every dish tells a geographic story? From Japanese sushi shaped by island life to Indian curries born from ancient spice trade routes, kids explore how geography and culture combine to create the world's most delicious traditions. A mouth-watering lesson that makes cultural empathy feel absolutely irresistible!"},
+      {title:"Languages: How Many & Where They Came From", desc:"With over 7,000 languages spoken across our planet, the world is a symphony of human expression! Kids discover how languages are born, spread, and sometimes disappear — and how geography shapes the way people communicate. A fascinating exploration that builds appreciation for every voice and every culture on Earth."},
+      {title:"Music, Dance & Art Across Continents", desc:"From the drumbeats of West Africa to the classical dance forms of India and the street art of South America, creative expression is geography in its most joyful form! Kids explore how landscape, climate, and culture inspire the world's most beautiful art forms — nurturing creativity, wellbeing, and a deep love of human diversity."},
+      {title:"Festivals of the World — Diwali, Carnival, Lunar New Year", desc:"Every festival is a geography lesson wrapped in colour, light, and joy! Kids journey through the world's most spectacular celebrations — from the dazzling lights of Diwali across South Asia to the explosive energy of Rio Carnival and the lantern-filled streets of Lunar New Year — discovering how festivals connect communities to their land, history, and identity."},
+      {title:"Clothing & Fashion Around the Globe", desc:"Why do people dress so differently around the world? The answer is geography! Kids explore how climate, landscape, and culture shape everything from the flowing robes of the Sahara to the warm wool layers of the Andes, discovering how clothing is a beautiful reflection of the relationship between people and their environment."},
+      {title:"World Religions & Sacred Geography", desc:"From the sacred rivers of India to the holy cities of Jerusalem and Mecca, geography and faith are deeply intertwined! Kids explore — in a respectful, age-appropriate way — how the world's major religions connect to specific places and landscapes, building profound cultural empathy and an understanding of what makes every place on Earth meaningful to someone."}
+    ]
+  },
+  {
+    id:4, emoji:"⛰️", color:"#0d9488", age:"Ages 5–10",
+    title:"Mountain Ranges of the World",
+    desc:"Journey to the highest peaks on every continent — discover how mountains shape weather, culture, and life!",
+    lessons:[
+      {title:"Mountains of North America", desc:"From the mighty Rockies to the dramatic Alaska Range, kids discover the towering giants of North America. Understanding these peaks builds a natural curiosity about how landscapes shape the communities and wildlife around them — sparking a lifelong love of the outdoors and the national parks that protect these magnificent places!"},
+      {title:"Mountains of South America", desc:"The mighty Andes stretch across seven countries — the longest mountain range on Earth! Kids explore how these peaks influence weather, rivers, and the incredible cultures of South America, connecting geography with the rich human stories that mountains create and the unique ecosystems that depend on them."},
+      {title:"Mountains of Asia & the Indian Subcontinent", desc:"Home to the Himalayas and Mount Everest — the roof of the world! Kids discover how these ancient mountains have shaped civilizations, monsoons, and biodiversity across Asia and India, developing a deep appreciation for nature's most dramatic forces and the cultures that have thrived in their shadow for thousands of years."},
+      {title:"Mountains of Africa", desc:"From Kilimanjaro's snow-capped summit to the Atlas Mountains of the north, Africa's peaks surprise and amaze! Kids learn how mountains create unique ecosystems and microclimates — building environmental awareness about one of the world's most biodiverse continents and why protecting these habitats matters so much."},
+      {title:"Mountains of Europe & Australia", desc:"The Alps, Pyrenees, and Australia's Great Dividing Range — each with their own unique story! Kids explore how mountains across these regions have shaped trade routes, inspired national parks, and supported sustainable living practices that communities depend on today — from Alpine farming to Australian bushland conservation."},
+      {title:"How Mountains Form — Tectonic Plates & Volcanoes", desc:"The Earth is always moving — and mountains are proof! Kids get a fascinating introduction to tectonic plates and volcanic forces, building critical thinking skills as they understand how the planet's biggest structures are constantly being shaped and reshaped beneath our feet. Science and geography working together in the most dramatic way!"},
+      {title:"Mountain Ecosystems & Wildlife", desc:"Mountains are home to some of the world's most extraordinary wildlife — snow leopards, condors, mountain gorillas and more! Kids explore these precious ecosystems, connecting their love of nature with the importance of conservation and protecting our planet's wild places for future generations to discover and cherish."}
+    ]
+  },
+  {
+    id:5, emoji:"🛣️", color:"#f97316", age:"Ages 5–10",
+    title:"Key Highways & Roads of the World",
+    desc:"Follow the world's greatest roads — from Route 66 to the Silk Road — and discover how they connect civilizations!",
+    lessons:[
+      {title:"Famous Roads of North America", desc:"From the iconic Route 66 stretching across the American heartland to the stunning Pacific Coast Highway hugging California's cliffs, kids discover how roads tell the story of a nation! Understanding these routes builds a fascinating connection between geography, history, and the communities that grew alongside them — including right here in the Pacific Northwest!"},
+      {title:"Ancient Roads — Silk Road & Roman Roads", desc:"Long before cars and highways, ancient civilizations built roads that changed the world forever! Kids explore the legendary Silk Road connecting Asia to Europe and the remarkable Roman road network, discovering how trade routes shaped cultures, spread ideas, and built the foundations of our modern interconnected world."},
+      {title:"Pan-American Highway: Connecting Two Continents", desc:"Stretching nearly 30,000 miles from Alaska to Argentina, the Pan-American Highway is one of humanity's greatest engineering achievements! Kids explore how this incredible road connects dozens of countries, cultures, and ecosystems — building a vivid understanding of just how beautifully interconnected our world truly is."},
+      {title:"European Motorways & the Autobahn", desc:"Europe's network of motorways weaves together 44 countries into one remarkable connected continent! Kids discover how the famous German Autobahn and Europe's highway systems have shaped trade, travel, and cooperation between nations — showing geography in action at its most exciting and collaborative."},
+      {title:"Asian Highways & the Karakoram Highway", desc:"The Karakoram Highway — built through some of the world's most dramatic mountain terrain — is an engineering marvel that connects Pakistan and China! Kids explore Asia's vast highway networks, discovering how roads carved through deserts, mountains, and jungles bring communities together across one of the world's most diverse continents."},
+      {title:"Roads of Africa & Australia", desc:"From the red dirt tracks crossing the Australian Outback to the Trans-African Highway network spanning an entire continent, kids discover roads that connect some of Earth's most remote and breathtaking landscapes. These routes reveal how geography shapes infrastructure and how communities adapt sustainably to their natural environments."},
+      {title:"Future of Transport — Tunnels, Bridges & Hyperloops", desc:"What will travel look like tomorrow? Kids take an exciting peek into the future — from the Channel Tunnel beneath the sea to proposed hyperloop networks that could connect cities at lightning speed! This forward-looking lesson builds critical thinking about how innovation, geography, and sustainability will shape our world for generations to come."}
+    ]
+  },
+  {
+    id:6, emoji:"🏛️", color:"#7c3aed", age:"Ages 5–10",
+    title:"Geopolitics for Young Explorers",
+    desc:"Understand how countries work together (and sometimes don't!) — borders, alliances, power, and world events.",
+    lessons:[
+      {title:"What is Geopolitics? Why Maps Are Power", desc:"Did you know that maps are one of the most powerful tools in the world? Kids discover how borders, territories, and geography influence the decisions that countries make every day. This eye-opening introduction builds critical thinking skills as young learners begin to understand the fascinating relationship between place and power."},
+      {title:"The United Nations & How Countries Cooperate", desc:"With 193 member countries, the United Nations is geography and diplomacy working together on a global scale! Kids explore how nations collaborate to solve the world's biggest challenges — from climate change to hunger — building a deep sense of global awareness, empathy, and the belief that cooperation can truly change the world."},
+      {title:"Famous Borders & How They Were Drawn", desc:"Every border has a story — and some of the most fascinating stories in history are written on maps! Kids discover how the world's most famous boundaries were created, contested, and changed over time, developing a nuanced understanding of how geography, culture, and history are permanently and beautifully intertwined."},
+      {title:"Natural Resources & Why Countries Compete", desc:"Oil, water, forests, minerals — the Earth's natural resources are at the heart of global relationships! Kids explore why countries cooperate and sometimes compete over these precious gifts of geography, building awareness about sustainable living and why protecting our planet's resources matters for every nation on Earth."},
+      {title:"Alliances: NATO, ASEAN & the African Union", desc:"From NATO in the West to ASEAN in Southeast Asia and the African Union across 55 countries, alliances shape our world! Kids discover how geography brings nations together into powerful partnerships — building a fascinating map of global cooperation that shows just how connected every corner of our planet truly is."},
+      {title:"Conflict Zones & Peacekeeping", desc:"Some of the world's most complex challenges happen where geography, resources, and culture intersect. Kids explore — in an age-appropriate way — how conflicts arise and how the world works together through peacekeeping to resolve them, nurturing compassion, global awareness, and a genuine desire to make our world a better place."},
+      {title:"Climate Geopolitics — Who Owns the Arctic?", desc:"As the Arctic ice melts, a new geography is emerging — and countries are paying close attention! Kids explore the fascinating geopolitics of climate change, discovering how rising temperatures are reshaping borders, resources, and international relationships. A powerful lesson in why understanding our planet is the most important skill of the 21st century."}
+    ]
+  }
+];
+
+let editingId = null;
+
+/* ================================================================
+   RENDER PROGRAMS
+   ================================================================ */
+function renderPrograms() {
+  const grid = document.getElementById('programsGrid');
+  grid.innerHTML = '';
+  programs.forEach(prog => {
+    const card = document.createElement('div');
+    card.className = 'program-card';
+
+    const firstFive = prog.lessons.slice(0, 5);
+    const remaining = prog.lessons.slice(5);
+
+    const lessonHTML = (lessons, hidden=false) => lessons.map((l,i) => {
+      const idx = hidden ? i + 5 : i;
+      return `<div class="lesson-item" style="${hidden?'display:none':''}" data-hidden="${hidden}">
+        <div class="lesson-title-row">
+          <div class="lesson-num" style="background:${prog.color}">${idx+1}</div>
+          <span>${l.title}</span>
+          ${l.desc ? `<span class="lesson-arrow" id="arr-${prog.id}-${idx}">▾</span>` : ''}
+        </div>
+        ${l.desc ? `<div class="lesson-desc" id="desc-${prog.id}-${idx}">${l.desc}</div>` : ''}
+      </div>`;
+    }).join('');
+
+    const moreCount = remaining.length;
+
+    card.innerHTML = `
+      <div class="program-header" style="border-bottom-color:${prog.color}">
+        <div class="program-emoji">${prog.emoji}</div>
+        <div class="program-meta">
+          <span class="program-tag" style="background:${prog.color}22;color:${prog.color}">${prog.lessons.length} Lessons</span>
+          <h3>${prog.title}</h3>
+          <p class="program-desc">${prog.desc}</p>
+        </div>
+      </div>
+      <div class="program-lessons" id="lessons-${prog.id}">
+        ${lessonHTML(firstFive)}
+        <div id="extra-${prog.id}">${lessonHTML(remaining, true)}</div>
+      </div>
+      <div class="program-footer">
+        <div class="age-badge">👦 ${prog.age}</div>
+        ${moreCount > 0 ? `<button class="btn-expand" id="expand-${prog.id}" onclick="toggleExtra(${prog.id})">+${moreCount} more lessons ▾</button>` : '<span></span>'}
+      </div>
+      <div class="program-actions">
+        <button class="btn-edit-prog" onclick="openEditModal(${prog.id})">✏️ Edit</button>
+        <button class="btn-del-prog" onclick="deleteProgram(${prog.id})">🗑️ Delete</button>
+      </div>`;
+
+    card.querySelectorAll('.lesson-item').forEach((item, idx) => {
+      item.addEventListener('click', () => toggleLesson(prog.id, idx < 5 ? idx : idx, item));
+    });
+
+    grid.appendChild(card);
+  });
+
+  // Re-attach lesson click handlers properly
+  programs.forEach(prog => {
+    prog.lessons.forEach((l, idx) => {
+      const descEl = document.getElementById(`desc-${prog.id}-${idx}`);
+      const arrEl = document.getElementById(`arr-${prog.id}-${idx}`);
+      if(descEl && arrEl) {
+        const row = descEl.closest('.lesson-item');
+        row.addEventListener('click', () => {
+          descEl.classList.toggle('open');
+          arrEl.classList.toggle('open');
+        });
+      }
+    });
+  });
+
+  updateStats();
+  updateProgramCheckboxes();
+  // Re-observe new elements
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+}
+
+function toggleExtra(id) {
+  const extra = document.getElementById('extra-' + id);
+  const btn = document.getElementById('expand-' + id);
+  const items = extra.querySelectorAll('.lesson-item');
+  const isHidden = items.length && items[0].style.display === 'none';
+  items.forEach(el => el.style.display = isHidden ? 'block' : 'none');
+  const count = items.length;
+  btn.textContent = isHidden ? 'Show fewer ▴' : `+${count} more lessons ▾`;
+}
+
+function updateStats() {
+  const total = programs.reduce((s,p) => s + p.lessons.length, 0);
+  document.getElementById('stat-programs').textContent = programs.length + '+';
+  document.getElementById('stat-lessons').textContent = total + '+';
+}
+
+function updateProgramCheckboxes() {
+  const box = document.getElementById('programCheckboxes');
+  box.innerHTML = programs.map(p =>
+    `<label class="checkbox-item" onclick="this.classList.toggle('checked')">
+      <input type="checkbox"> ${p.emoji} ${p.title}
+    </label>`
+  ).join('');
+}
+
+/* ================================================================
+   TIME SLOTS
+   ================================================================ */
+function renderTimeSlots() {
+  const wrap = document.getElementById('timeSlots');
+  const slots = [];
+  for(let h=17; h<20; h++) { slots.push(`${h}:00`); slots.push(`${h}:30`); }
+  wrap.innerHTML = slots.map(t => {
+    const [hr, min] = t.split(':').map(Number);
+    const displayHr = hr > 12 ? hr-12 : hr;
+    return `<div class="time-slot" onclick="selectSlot(this)">${displayHr}:${min===0?'00':'30'} PM</div>`;
+  }).join('');
+}
+
+function selectSlot(el) {
+  document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+/* ================================================================
+   FORM SUBMIT
+   ================================================================ */
+function submitForm() {
+  const parent = document.getElementById('parentName').value.trim();
+  const child  = document.getElementById('childName').value.trim();
+  const email  = document.getElementById('email').value.trim();
+  const age    = document.getElementById('childAge').value;
+  const slot   = document.querySelector('.time-slot.selected');
+  if(!parent||!child||!email||!age||!slot) {
+    alert('Please fill in all required fields (*) and select a time slot! ✏️');
+    return;
+  }
+  // Google Analytics event tracking
+  if(typeof gtag !== 'undefined') gtag('event','form_submit',{event_category:'Registration',event_label:'GeographyQuest Registration'});
+  document.getElementById('formContent').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
+
+/* ================================================================
+   MODAL — ADD / EDIT PROGRAM
+   ================================================================ */
+function openAddModal() {
+  editingId = null;
+  document.getElementById('modalTitle').textContent = '➕ Add New Program';
+  document.getElementById('progTitle').value = '';
+  document.getElementById('progDesc').value = '';
+  document.getElementById('progEmoji').value = '🌊';
+  document.getElementById('progColor').value = '#0ea5e9';
+  document.getElementById('progAge').value = 'Ages 5–10';
+  document.getElementById('lessonsBuilder').innerHTML = '';
+  for(let i=0;i<5;i++) addLessonInput();
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function openEditModal(id) {
+  const prog = programs.find(p => p.id === id);
+  if(!prog) return;
+  editingId = id;
+  document.getElementById('modalTitle').textContent = '✏️ Edit Program';
+  document.getElementById('progTitle').value = prog.title;
+  document.getElementById('progDesc').value = prog.desc;
+  document.getElementById('progEmoji').value = prog.emoji;
+  document.getElementById('progColor').value = prog.color;
+  document.getElementById('progAge').value = prog.age;
+  document.getElementById('lessonsBuilder').innerHTML = '';
+  prog.lessons.forEach(l => addLessonInput(l.title, l.desc));
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal() { document.getElementById('modalOverlay').classList.remove('open'); }
+
+function addLessonInput(title='', desc='') {
+  const builder = document.getElementById('lessonsBuilder');
+  const row = document.createElement('div');
+  row.className = 'lesson-input-row';
+  row.innerHTML = `
+    <div class="lesson-input-group">
+      <input type="text" placeholder="Lesson title…" value="${title}">
+      <textarea class="lesson-desc-input" rows="2" placeholder="Short description (2-3 sentences)…">${desc}</textarea>
+    </div>
+    <button type="button" class="btn-rm-lesson" onclick="this.parentElement.remove()" title="Remove">✕</button>`;
+  builder.appendChild(row);
+}
+
+function saveProgram() {
+  const title  = document.getElementById('progTitle').value.trim();
+  const desc   = document.getElementById('progDesc').value.trim();
+  const emoji  = document.getElementById('progEmoji').value.trim() || '🗺️';
+  const color  = document.getElementById('progColor').value;
+  const age    = document.getElementById('progAge').value;
+  const rows   = document.querySelectorAll('#lessonsBuilder .lesson-input-row');
+  const lessons = Array.from(rows).map(row => {
+    const inputs = row.querySelectorAll('input, textarea');
+    return { title: inputs[0].value.trim(), desc: inputs[1].value.trim() };
+  }).filter(l => l.title);
+
+  if(!title) { alert('Please enter a program title!'); return; }
+  if(lessons.length < 1) { alert('Please add at least one lesson!'); return; }
+
+  if(editingId) {
+    const prog = programs.find(p => p.id === editingId);
+    Object.assign(prog, {title, desc, emoji, color, age, lessons});
+  } else {
+    const newId = Math.max(0, ...programs.map(p => p.id)) + 1;
+    programs.push({id:newId, title, desc, emoji, color, age, lessons});
+  }
+  closeModal();
+  renderPrograms();
+}
+
+function deleteProgram(id) {
+  if(!confirm('Are you sure you want to delete this program?')) return;
+  programs = programs.filter(p => p.id !== id);
+  renderPrograms();
+}
+
+/* ================================================================
+   SCROLL ANIMATIONS
+   ================================================================ */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold:0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+/* ================================================================
+   CLOSE MODAL ON BACKDROP CLICK
+   ================================================================ */
+document.getElementById('modalOverlay').addEventListener('click', function(e) {
+  if(e.target === this) closeModal();
+});
+
+/* ================================================================
+   INIT
+   ================================================================ */
+renderPrograms();
+renderTimeSlots();
+</script>
+</body>
+</html>
