@@ -1025,6 +1025,23 @@ function submitForm() {
     alert('Please fill in all required fields (*) and select a time slot! ✏️');
     return;
   }
+  
+  // Send form data to Formspree
+const formData = new FormData();
+formData.append('Parent Name', parent);
+formData.append('Child Name', child);
+formData.append('Email', email);
+formData.append('Age', document.getElementById('childAge').value);
+formData.append('Day Preference', document.getElementById('dayPref').value);
+formData.append('Time Slot', document.querySelector('.time-slot.selected').textContent);
+formData.append('Message', document.getElementById('message').value);
+
+fetch('https://formspree.io/f/xbdpajzp', {
+  method: 'POST',
+  body: formData,
+  headers: { 'Accept': 'application/json' }
+});
+  
   // Google Analytics event tracking
   if(typeof gtag !== 'undefined') gtag('event','form_submit',{event_category:'Registration',event_label:'GeographyQuest Registration'});
   document.getElementById('formContent').style.display = 'none';
